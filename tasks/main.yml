@@ -6,9 +6,13 @@
     update_cache: yes
   when: ansible_os_family == 'Debian'
 
+  # https://developer.fedoraproject.org/tech/languages/ruby/ruby-installation.html
+  # https://developer.fedoraproject.org/tech/languages/ruby/gems-installation.html
 - name: Install dnf package
   ansible.builtin.dnf:
-    name: "ruby"
+    name:
+      - ruby 
+      - ruby-devel
     state: present
   when: ansible_os_family == 'RedHat'
 
