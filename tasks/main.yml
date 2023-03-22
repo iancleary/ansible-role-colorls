@@ -13,6 +13,7 @@
     name:
       - ruby 
       - ruby-devel
+      - '@C Development Tools and Libraries'
     state: present
   when: ansible_os_family == 'RedHat'
 
