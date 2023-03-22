@@ -44,15 +44,13 @@ Including an example of how to use your role (for instance, with variables passe
   user: unprivelaged
   roles:
     - role: iancleary.colorls
-      become: true(
+      become: true
       become_password: "{{ vault_become_password }}"
 ```
 
 > Or you can remove become_password and use [--ask-become-pass](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_privilege_escalation.html)
 
-**Note the underscore in `git_repos`, it is not a dash!**
-
-> This role doesn't need to be run as root, use whatever user you want to clone the repos as.
+Privelege escalation is needed to install ruby.
 
 ```yaml
 - hosts: servers
